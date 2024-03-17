@@ -20,3 +20,4 @@ export const readtime = (text?: string): string => {
   return formattedAdjustedTime;
 };
 
+export const year = new Date().getFullYear();

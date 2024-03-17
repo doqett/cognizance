@@ -51,13 +51,18 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border ;
   }
   body {
     @apply bg-background text-foreground;
   }
   .container{
     @apply !px-6
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+      max-width: 1536px;
   }
 }
 

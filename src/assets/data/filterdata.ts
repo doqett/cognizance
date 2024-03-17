@@ -1,0 +1,88 @@
+export const filters = [
+  {
+    title: "Category",
+    value:'category',
+    options: [
+      { title: "Professional Certificate", value: "professional_certificate" },
+      { title: "Development", value: "development" },
+      { title: "Design", value: "design" },
+      { title: "Marketing", value: "marketing" },
+      { title: "Business", value: "business" },
+      { title: "Data Science", value: "data_science" },
+      { title: "Lifestyle", value: "lifestyle" },
+      { title: "Photography", value: "photography" },
+      { title: "Writing", value: "writing" },
+      { title: "Music", value: "music" },
+      { title: "Health & Fitness", value: "health_Fitness" },
+      { title: "Personal Development", value: "personal_development" },
+      { title: "Language Learning", value: "language_learning" },
+    ],
+  },
+  {
+    title: "Subject",
+    value:'subject',
+    options: [
+      { title: "Art & Design", value: "art_design" },
+      { title: "Business", value: "business" },
+      { title: "Computer Science", value: "computer_science" },
+      { title: "Data Science", value: "data_science" },
+      { title: "Development", value: "development" },
+      { title: "Health & Fitness", value: "health_fitness" },
+      { title: "Language Learning", value: "language_learning" },
+      { title: "Lifestyle", value: "lifestyle" },
+      { title: "Marketing", value: "marketing" },
+      { title: "Music", value: "music" },
+      { title: "Science", value: "Science" },
+      { title: "Writing", value: "writing" },
+    ],
+  },
+  {
+    title: "Level",
+    value: "level",
+    options: [
+      { title: "Beginner", value: "beginner" },
+      { title: "Intermediate", value: "intermediate" },
+      { title: "Advanced", value: "advanced" },
+      { title: "All Levels", value: "all_levels" },
+    ],
+  },
+  {
+    title: "Language",
+    value: "language",
+    options: [
+      { title: "English", value: "english" },
+      { title: "Nepali", value: "nepali" },
+    ],
+  },
+  {
+    title: "Type",
+    value: "type",
+    options: [
+      { title: "Self Paced", value: "self_paced" },
+      { title: "Instructor-Led", value: "instructor_led" },
+      { title: "Live Sessions", value: "live_sessions" },
+      { title: "Blended", value: "blended" },
+    ],
+  },
+  {
+    title: "Price",
+    value: "price",
+    options: [
+      { title: "Free", value: "Free" },
+      { title: "0 - NPR2500", value: "0_NPR2500" },
+      { title: "NPR2500 - NPR5000", value: "NPR2500_NPR5000" },
+      { title: "NPR5000 - NPR15000", value: "NPR5000_NPR15000" },
+      { title: "NPR15000 +", value: "NPR15000+" },
+    ],
+  },
+  {
+    title: "Duration",
+    value: "duration",
+    options: [
+      { title: "Less than 1 week", value: "less_than_1_week" },
+      { title: "1-4 weeks", value: "1_4_weeks" },
+      { title: "4-8 weeks", value: "4_8_weeks" },
+      { title: "8 weeks+", value: "8_weeks+" },
+    ],
+  },
+];

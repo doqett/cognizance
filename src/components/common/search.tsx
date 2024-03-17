@@ -39,11 +39,11 @@ export const Search = () => {
       <Button
         variant='outline'
         className={cn(
-          'relative h-12 w-48 sm:w-full max-w-xl justify-start rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12'
+          'relative h-12 w-48 sm:w-full justify-start rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12'
         )}
         onClick={() => setOpen(true)}>
         <span className='hidden lg:inline-flex'>
-          Search Courses, Blogs, Communities and more..
+          Search Courses..
         </span>
         <span className='inline-flex lg:hidden'>Search...</span>
         <kbd className='pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-9 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[14px] font-medium opacity-100 sm:flex'>

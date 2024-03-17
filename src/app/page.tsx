@@ -1,4 +1,4 @@
-import { Homepage } from '@/components/blocks';
+import { Homepage } from '@/components/screens';
 
 export default function Home() {
   return (

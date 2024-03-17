@@ -1,3 +1,4 @@
+import { CoursesList } from '@/components/screens/search/sections/courses-list';
 import { Metadata } from 'next';
 import React from 'react';
 
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const Page = () => {
-  return <div>Page</div>;
+  return <CoursesList/>;
 };
 
 export default Page;

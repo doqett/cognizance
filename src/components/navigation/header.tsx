@@ -17,16 +17,16 @@ import { MobileLogo } from '@/assets/jsx/mobile-logo';
 
 export function Header() {
   return (
-    <header className='fixed top-0 w-full text-foreground font-light z-50 backdrop-blur-sm bg-background/80'>
+    <header className='fixed top-0 w-full text-foreground font-light z-50 backdrop-blur-sm bg-background shadow-md'>
       <div className='container text-lg flex justify-between items-center h-16 gap-8'>
         <Link href={'/'}>
           <Logo className='h-8 [&>path]:fill-primary transition-colors duration-300 hidden sm:block' />
           <MobileLogo className='h-8 [&>path]:fill-primary transition-colors duration-300 sm:hidden' />
         </Link>
-        <Input
+        {/* <Input
           placeholder='Search Courses, Blogs, Communities and more..'
           className='truncate w-full max-w-md h-10 px-4 rounded-full text-center'
-        />
+        /> */}
         <div className='hidden sm:flex gap-6 items-center ml-auto lg:ml-0'>
           <ThemeSwitch />
           <Link
