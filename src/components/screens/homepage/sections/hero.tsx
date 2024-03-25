@@ -19,9 +19,10 @@ export const Hero = () => {
             placeholder='Search Courses '
           />
         </div>
-        <div className='absolute left-0 md:relative bg-foreground  h-80 md:h-96 w-full md:w-fit md:[clip-path:polygon(25%_0%,100%_0%,100%_100%,_0%_100%)] z-0'>
+        <div className='absolute left-0 md:relative h-80 md:h-96 w-full md:w-fit md:[clip-path:polygon(25%_0%,100%_0%,100%_100%,_0%_100%)] z-0'>
           <Image
             src={bg}
+            priority
             alt='Student'
             className='w-full h-full object-cover select-none pointer-events-none'
           />

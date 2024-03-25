@@ -9,6 +9,7 @@ export * from './drawer';
 export * from './dropdown-menu';
 export * from './input';
 export * from './label';
+export * from './navlink';
 export * from './resizable';
 export * from './scroll-area';
 export * from './select';
