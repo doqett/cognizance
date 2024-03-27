@@ -3,11 +3,11 @@ import React from 'react';
 const Page = () => {
   return (
     <section>
-      <div className='prose prose-lg max-w-none text-base prose-p:my-2 prose-h2:my-6 break-words dark:prose-invert prose-a:text-blue-700 prose-a:no-underline hover:prose-a:text-blue-500 dark:prose-a:text-blue-300 dark:hover:prose-a:text-blue-500'>
+      <div className='prose max-w-none text-base prose-p:my-2 prose-h2:my-6 break-words dark:prose-invert prose-a:text-blue-700 prose-a:no-underline hover:prose-a:text-blue-500 dark:prose-a:text-blue-300 dark:hover:prose-a:text-blue-500'>
         <div className='flex w-full'>
           <div className='w-full'>
-            <h1 className='text-5xl font-bold'>Privacy Policy</h1>
-            <h3 className=' text-lg leading-relaxed'>
+            <h1 className='text-5xl font-bold mb-3'>Privacy Policy</h1>
+            <h3 className='text-lg leading-relaxed'>
               We treat your privacy with upmost respect. Exact details are outlined below as plainly
               as possible. If you have any questions,{' '}
               <a href='mailto:support@doqett.com'>please get in touch.</a>

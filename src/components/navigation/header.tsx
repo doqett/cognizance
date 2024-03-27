@@ -9,7 +9,6 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  Input,
 } from '@/components/ui';
 import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { ThemeSwitch } from '@/components/common';
@@ -23,10 +22,6 @@ export function Header() {
           <Logo className='h-8 [&>path]:fill-primary transition-colors duration-300 hidden sm:block' />
           <MobileLogo className='h-8 [&>path]:fill-primary transition-colors duration-300 sm:hidden' />
         </Link>
-        {/* <Input
-          placeholder='Search Courses, Blogs, Communities and more..'
-          className='truncate w-full max-w-md h-10 px-4 rounded-full text-center'
-        /> */}
         <div className='hidden sm:flex gap-6 items-center ml-auto lg:ml-0'>
           <ThemeSwitch />
           <Link
