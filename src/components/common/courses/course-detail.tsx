@@ -60,7 +60,7 @@ export const CourseDetail = () => {
               <div className="relative group">
                 <div
                   id="course_banner"
-                  className="h-64 sm:h-80 w-full bg-background relative rounded-md overflow-hidden"
+                  className="h-64 sm:h-80 w-full bg-background relative rounded-lg overflow-hidden"
                 >
                   <Image
                     src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -141,7 +141,7 @@ export const CourseDetail = () => {
         </div>
       </div>
       <div className="grid grid-cols-12 gap-4 lg:gap-10 py-4 border-b">
-        <div className="w-full col-span-12 lg:col-span-8 gap-12 duration-300">
+        <div className="w-full col-span-12 lg:col-span-8 flex flex-col gap-12 duration-300">
           <div className="space-y-8">
             <h2 className="text-3xl font-semibold tracking-tight text-primary">About the Course</h2>
             <p className="text-muted-foreground text-pretty">
@@ -164,7 +164,7 @@ export const CourseDetail = () => {
           </div>
           <CourseContents />
         </div>
-        <div className="lg:max-w-sm sticky top-28 w-full h-fit col-span-12 lg:space-y-3 lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 duration-300">
+        <div className="lg:max-w-sm sticky top-24 w-full h-fit col-span-12 lg:space-y-3 lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 duration-300">
           <h2 className="text-3xl font-semibold tracking-tight text-primary">Similar Courses</h2>
           {courses.slice(0, 5).map((course, index) => (
             <React.Fragment key={index}>
