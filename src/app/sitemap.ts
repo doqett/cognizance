@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   //   const allPosts = await res.json();
 
   //   const posts = allPosts.map((post) => ({
-  //     url: `https://doqett.com/blog/${post.slug}`,
+  //     url: `https://doqett.com/courses/${post.slug}`,
   //     lastModified: post.publishedAt,
   //   }));
 

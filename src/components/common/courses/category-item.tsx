@@ -1,10 +1,11 @@
 import { TCategoryProps } from "@/interface/types";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import React from "react";
 
 export function CategoryItem(props: TCategoryProps) {
   return (
-    <div className="flex gap-2 bg-background border border-border/50 shadow hover:shadow-lg duration-300 p-1 rounded-lg items-center group">
+    <div className="flex cursor-pointer gap-2 bg-background border border-border/50 shadow hover:shadow-lg duration-300 p-1 rounded-lg items-center group">
       <div className="h-14 border border-border/50 w-14 rounded-md overflow-hidden">
         <Image
           src={props.image}
@@ -18,6 +19,7 @@ export function CategoryItem(props: TCategoryProps) {
         <p className="text-base font-medium">{props.title}</p>
         <p className="text-sm text-muted-foreground">{props.courses} courses</p>
       </div>
+      <ArrowTopRightIcon className="size-6 ml-auto group-hover:text-primary duration-300 mr-2 text-muted-foreground" />
     </div>
   );
 }

@@ -1,80 +1,43 @@
-import React from 'react';
-import { Avatar, AvatarFallback, AvatarImage, Button } from '@/components/ui';
-import {
-  BookmarkIcon,
-  DotsVerticalIcon,
-  PlusCircledIcon,
-  Share2Icon,
-} from '@radix-ui/react-icons';
-import { HiSparkles } from 'react-icons/hi2';
+import React from "react";
+import { Avatar, AvatarFallback, AvatarImage, Button } from "@/components/ui";
+import { BookmarkIcon } from "@radix-ui/react-icons";
+import { ICoursePreview } from "@/interface/types";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { Bookmark } from "@/helpers/bookmark";
 
-export const FeaturedCourse = () => {
+export const FeaturedCourse = ({ ...props }: ICoursePreview) => {
   return (
-    <div id='featured_course' className='w-full'>
-      <div id='course_description' className='py-4 space-y-2'>
-        <div className='flex gap-4 items-center'>
-          <time
-            dateTime='2020-03-16'
-            className='text-sm font-light text-muted-foreground'>
-            Mar 16, 2020
-          </time>
-          <div className='px-3 py-1 border rounded-full'>
-            <p className='text-sm'>Technology</p>
-          </div>
-        </div>
-        <div className='space-y-2'>
-          <h2 className='text-3xl sm:text-4xl font-bold'>
-            UX/UI Design Trends Going Into 2024
-          </h2>
-          <p className='line-clamp-3 md:text-lg text-muted-foreground hidden'>
-            Every year, we have a line up of new design trends that not only
-            look good, but also stick around and influence other designers to
-            “steal” the trend. Love it or hate it, there are actually some
-            design waves that are smart and functional. These functions could
-            range from including more information in less space, to build more
-            engagement with the users.
-          </p>
-        </div>
-        <div className='flex items-center gap-2 sm:gap-4 text-muted-foreground'>
-          <div className='flex gap-2 items-center py-1.5 px-1.5 pr-3 bg-accent rounded-full hover:brightness-95 duration-300 cursor-pointer group'>
-            <Avatar className='h-8 w-8'>
-              <AvatarImage
-                className=' group-hover:scale-110 duration-200'
-                src='https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80'
+    <div id="course-preview" className="relative w-full cursor-pointer ">
+      <Link href={`/courses/${props.title}`}>
+        <div className="bg-background flex p-1 border border-border/50 h-full rounded-lg shadow hover:shadow-lg duration-300 group">
+          <div className=" flex flex-col gap-4 items-start">
+            <div
+              className={cn(
+                "w-full h-24 aspect-square bg-accent relative rounded-lg overflow-hidden"
+              )}
+            >
+              <Image
+                src={props.banner}
+                alt={props.title}
+                // placeholder='blur'
+                height={200}
+                width={200}
+                className="h-full w-full object-cover group-hover:scale-105 duration-300 ease-in-out"
               />
-              <AvatarFallback>MF</AvatarFallback>
-            </Avatar>
-            <p className='hidden sm:block whitespace-nowrap group-hover:text-emerald-500 font-medium duration-200'>
-              Michael Foster
+            </div>
+          </div>
+          <div className={cn("p-2 space-y-0.5")}>
+            <h2 className={cn("text- leading-none line-clamp-2")}>{props.title}</h2>
+            <p className={cn("text-sm mt-auto text-muted-foreground")}>
+              Course Length: {props.duration}
             </p>
-            <PlusCircledIcon className='h-5 w-5 group-hover:text-emerald-500 duration-200' />
-          </div>
-          <p className='text-sm'>1-3 Months</p>
-          <div className='flex gap-4 ml-auto'>
-            <BookmarkIcon className='h-5 w-5' />
-            <Share2Icon className='h-5 w-5' />
-            <DotsVerticalIcon className='h-5 w-5' />
+            <p className="text-xs text-muted-foreground">{props.category}</p>
           </div>
         </div>
-      </div>
-      <div
-        id='course_banner'
-        className='h-56 sm:h-64 w-full bg-accent relative'>
-        <div className='absolute top-0 left-0 p-2'>
-          <p className='font-medium text-sm flex items-center gap-2 text-emerald-500/80 dark:text-emerald-600/80 px-3 py-0.5 bg-emerald-100/50 dark:bg-emerald-900/40 rounded-full border border-emerald-400/50 dark:border-emerald-600/40'>
-            Featured Course <HiSparkles />
-          </p>
-        </div>
-      </div>
-      <div className='mt-4 flex gap-4 items-end flex-wrap'>
-        <Button className='text-base h-11'>NPR 3000 - Enroll Now</Button>
-        <div className=''>
-          <p className='text-muted-foreground'>Starts 15 March 2020</p>
-          <p className='text-xs text-amber-500'>
-            Inclusive of taxes *
-          </p>
-        </div>
-      </div>
+      </Link>
+      <Bookmark className="absolute right-2 bottom-2 flex gap-4 ml-auto" id={props.id} />
     </div>
   );
 };

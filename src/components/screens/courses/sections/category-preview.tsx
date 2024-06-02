@@ -10,21 +10,21 @@ export function CategoryPreview(props: ICategoryPreview) {
       <div className=" pb-12 space-y-8">
         <div className="pt-10 flex justify-between items-center flex-wrap gap-4">
           <div className="space-y-1">
-            <h2 className="text-3xl font-semibold tracking-tight text-primary">
-              {props.title}
-            </h2>
+            <h2 className="text-3xl font-semibold tracking-tight text-primary">{props.title}</h2>
           </div>
           <Link
             href={"/courses/?categories=certificate+courses"}
-            className="h-10 py-2 px-5 flex gap-4 items-center w-fit max-w-xs bg-blue-600 text-primary-foreground rounded-lg shadow hover:shadow-lg duration-300">
+            className="h-10 py-2 px-5 flex gap-4 items-center w-fit max-w-xs bg-primary text-primary-foreground rounded-lg shadow hover:shadow-lg duration-300"
+          >
             <p className="">View All</p>
             <ArrowRightIcon className="h-5 w-5 " />
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 divide-y sm:divide-y-0 ">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(272px,1fr))] gap-4">
           {props.courses.slice(0, 6).map((course, index) => (
             <React.Fragment key={index}>
               <PreviewCourse
+                id={course.id}
                 title={course.title}
                 author={course.author}
                 avatar={course.avatar}

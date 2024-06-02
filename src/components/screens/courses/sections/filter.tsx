@@ -1,66 +1,70 @@
+"use client";
+import { useState } from "react";
 import { filters } from "@/assets/data/filterdata";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Button,
   Checkbox,
-  Label,
   Dialog,
   DialogContent,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
+  Label,
 } from "@/components/ui";
-import { MixerVerticalIcon } from "@radix-ui/react-icons";
-import React from "react";
 
 export function Filter() {
+  const [expandedFilter, setExpandedFilter] = useState<number | null>(null);
+
+  const handleShowMoreClick = (index: number | null) => {
+    setExpandedFilter(index === expandedFilter ? null : index);
+  };
+
   return (
-    <div className="lg:h-full lg:sticky top-24 w-64 pr-4 hidden lg:block">
+    <div className="lg:h-full lg:sticky top-24 w-64 pr-4 hidden shrink-0 lg:block">
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-medium">Filter</h2>
-        <p className="text-sm font-light text-blue-600">Clear All Filters</p>
+        <p className="text-sm font-light text-blue-600 cursor-pointer">Clear All Filters</p>
       </div>
       <div className="py-6">
         {filters.slice(0, 4).map((filter, index) => (
-          <div key={index} className=" space-y-2">
+          <div key={index} className="space-y-2">
             <h3 className="text-lg">{filter.title}</h3>
             <ul className="">
-              {filter.options.slice(0, 5).map((option, index) => (
+              {(expandedFilter === index ? filter.options : filter.options.slice(0, 5)).map(
+                (option, optionIndex) => (
+                  <li
+                    key={optionIndex}
+                    className="flex justify-between items-center px-3 py-0.5 rounded-md"
+                  >
+                    <Label
+                      htmlFor={option.value}
+                      className="text-base text-muted-foreground font-light"
+                    >
+                      {option.title}
+                    </Label>
+                    <Checkbox id={option.value} />
+                  </li>
+                )
+              )}
+              {filter.options.length > 5 && (
                 <li
-                  key={index}
-                  className="flex justify-between items-center px-3 py-0.5 rounded-md">
-                  <Label
-                    htmlFor={option.value}
-                    className="text-base text-muted-foreground font-light">
-                    {option.title}
-                  </Label>
-                  <Checkbox id={option.value} />
+                  className="text-sm font-light text-blue-600 text-end cursor-pointer"
+                  onClick={() => handleShowMoreClick(index)}
+                >
+                  {expandedFilter === index ? "Show less" : `+ ${filter.options.length - 5} more`}
                 </li>
-              ))}
-              <li className="text-sm font-light text-blue-600 text-end">
-                {filter.options.length - 5 > 0 && (
-                  <p className="">+ {filter.options.length - 5} more</p>
-                )}
-              </li>
+              )}
             </ul>
           </div>
         ))}
         <Dialog>
           <DialogTrigger asChild>
-            <Button
-              className="w-full text-sm text-blue-600 mt-6"
-              variant={"outline"}>
+            <Button className="w-full text-sm text-blue-600 mt-6" variant={"outline"}>
               Show All Filters
             </Button>
           </DialogTrigger>
@@ -76,13 +80,15 @@ export function Filter() {
                       <AccordionTrigger>{filter.title}</AccordionTrigger>
                       <AccordionContent>
                         <ul className="">
-                          {filter.options.map((option, index) => (
+                          {filter.options.map((option, optionIndex) => (
                             <li
-                              key={index}
-                              className="flex justify-between items-center py-0.5 rounded-md">
+                              key={optionIndex}
+                              className="flex justify-between items-center py-0.5 rounded-md"
+                            >
                               <Label
                                 htmlFor={`${option.value}-dialog`}
-                                className="text-base text-muted-foreground font-light">
+                                className="text-base text-muted-foreground font-light"
+                              >
                                 {option.title}
                               </Label>
                               <Checkbox id={`${option.value}-dialog`} />
@@ -96,9 +102,7 @@ export function Filter() {
               </Accordion>
             </div>
             <DialogFooter>
-              <Button
-                className="w-full text-sm text-blue-600"
-                variant={"outline"}>
+              <Button className="w-full text-sm text-blue-600" variant={"outline"}>
                 Apply Filters
               </Button>
             </DialogFooter>

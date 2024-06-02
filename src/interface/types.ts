@@ -2,6 +2,7 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { StaticImageData } from "next/image";
 
 export interface ICoursePreview {
+  id: string;
   title: string;
   description?: string;
   author: string;

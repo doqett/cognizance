@@ -68,18 +68,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body className={`${inter.className} grid min-h-full grid-rows-[auto_1fr_auto] antialiased transition-colors `}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.className} grid min-h-full grid-rows-[auto_1fr_auto] antialiased transition-colors`}
+      >
         <Suspense>
           <GoogleTagManager />
         </Suspense>
         <ThemeProvider
-          attribute='class'
-          defaultTheme='light'
+          attribute="class"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <main className='min-h-full w-screen bg-background text-foreground'>
+          <main className="min-h-full w-screen bg-background text-foreground">
             <Header />
             {children}
             <Footer />

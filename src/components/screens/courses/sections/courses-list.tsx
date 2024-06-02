@@ -6,7 +6,7 @@ import { Cross2Icon } from "@radix-ui/react-icons";
 
 export function CoursesList() {
   return (
-    <div className="lg:w-[calc(100%-15rem)]">
+    <div className="h-full w-full">
       <div className="flex">
         <h2 className="text-3xl font-semibold tracking-tight text-primary">
           243 Available Courses

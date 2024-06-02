@@ -8,7 +8,7 @@ export function PopularCourses() {
   return (
     <section>
       <div className="container pb-12 space-y-8">
-        <div className=" gap-2 flex-wrap justify-center text-xs hidden">
+        <div className="hidden gap-2 flex-wrap justify-center text-xs py-4">
           <div className="px-2.5 py-1.5 border rounded-full w-fit hover:bg-accent duration-200">
             Digital Marketing
           </div>
@@ -37,21 +37,22 @@ export function PopularCourses() {
               Earn Professional Certificates
             </h2>
             <p className="text-lg text-muted-foreground">
-              Dive into Doqett&apos;s most popular programs, get ready for
-              in-demand career options.
+              Dive into Doqett&apos;s most popular programs, get ready for in-demand career options.
             </p>
           </div>
           <Link
             href={"/courses/?categories=certificate+courses"}
-            className="h-12 py-2 px-5 flex gap-4 items-center w-full sm:w-fit max-w-xs bg-primary text-primary-foreground rounded-lg shadow hover:shadow-lg duration-300">
+            className="h-12 py-2 px-5 flex gap-4 items-center w-full sm:w-fit max-w-xs bg-primary text-primary-foreground rounded-lg shadow hover:shadow-lg duration-300"
+          >
             <p className="sm:text-lg">View All Certificate Courses</p>
             <ArrowRightIcon className="h-5 w-5 sm:h-6 sm:w-6" />
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 divide-y sm:divide-y-0 ">
-          {courses.slice(0, 8).map((course, index) => (
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4">
+          {courses.slice(0, 10).map((course, index) => (
             <React.Fragment key={index}>
               <PreviewCourse
+                id={course.id}
                 title={course.title}
                 author={course.author}
                 avatar={course.avatar}
