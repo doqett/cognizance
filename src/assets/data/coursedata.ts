@@ -3,6 +3,7 @@ import demo from "@/assets/images/banner.png";
 
 export const courses: ICoursePreview[] = [
   {
+    id: "Mastering JavaScript: From Beginner to Pro",
     title: "Mastering JavaScript: From Beginner to Pro",
     description:
       "Learn the fundamentals and advanced concepts of JavaScript to become a confident developer.",
@@ -16,6 +17,7 @@ export const courses: ICoursePreview[] = [
     tag: "",
   },
   {
+    id: "The Power of Storytelling: Captivate Your Audience",
     title: "The Power of Storytelling: Captivate Your Audience",
     description:
       "Discover the art of storytelling and learn how to craft compelling narratives for any medium.",
@@ -29,6 +31,7 @@ export const courses: ICoursePreview[] = [
     tag: "New",
   },
   {
+    id: "Python for Data Science: Analyze Like a Pro",
     title: "Python for Data Science: Analyze Like a Pro",
     description:
       "Unlock the potential of Python for data analysis and manipulation. Learn essential libraries like NumPy and Pandas.",
@@ -42,6 +45,7 @@ export const courses: ICoursePreview[] = [
     tag: "",
   },
   {
+    id: "From Beginner to Blogger: Build Your Online Presence",
     title: "From Beginner to Blogger: Build Your Online Presence",
     description:
       "Learn the ropes of blogging, content creation, and building a community around your passions.",
@@ -56,6 +60,7 @@ export const courses: ICoursePreview[] = [
   },
   // Add 2-4 more courses following the same format
   {
+    id: "The Art of Negotiation: Win-Win Strategies",
     title: "The Art of Negotiation: Win-Win Strategies",
     description:
       "Master the art of negotiation and learn to achieve successful outcomes in any situation.",
@@ -69,6 +74,7 @@ export const courses: ICoursePreview[] = [
     tag: "",
   },
   {
+    id: "Photography Essentials: Capture Stunning Images",
     title: "Photography Essentials: Capture Stunning Images",
     description:
       "Learn the fundamentals of photography, composition, and lighting to take your photos to the next level.",
