@@ -142,26 +142,7 @@ export const CourseDetail = () => {
       </div>
       <div className="grid grid-cols-12 gap-4 lg:gap-10 py-4 border-b">
         <div className="w-full col-span-12 lg:col-span-8 flex flex-col gap-12 duration-300">
-          <div className="space-y-8">
-            <h2 className="text-3xl font-semibold tracking-tight text-primary">About the Course</h2>
-            <p className="text-muted-foreground text-pretty">
-              Every year, we have a line up of new design trends that not only look good, but also
-              stick around and influence other designers to “steal” the trend. Love it or hate it,
-              there are actually some design waves that are smart and functional. These functions
-              could range from including more information in less space, to build more engagement
-              with the users. Every year, we have a line up of new design trends that not only look
-              good, but also stick around and influence other designers to “steal” the trend. Love
-              it or hate it, there are actually some design waves that are smart and functional.
-              <br />
-              <br />
-              These functions could range from including more information in less space, to build
-              more engagement with the users. Every year, we have a line up of new design trends
-              that not only look good, but also stick around and influence other designers to
-              “steal” the trend. Love it or hate it, there are actually some design waves that are
-              smart and functional. These functions could range from including more information in
-              less space, to build more engagement with the users.
-            </p>
-          </div>
+          {About()}
           <CourseContents />
         </div>
         <div className="lg:max-w-sm sticky top-24 w-full h-fit col-span-12 lg:space-y-3 lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 duration-300">
@@ -185,4 +166,29 @@ export const CourseDetail = () => {
       <CourseFaq />
     </div>
   );
+
+  function About() {
+    return (
+      <div className="space-y-8">
+        <h2 className="text-3xl font-semibold tracking-tight text-primary">About the Course</h2>
+        <p className="text-muted-foreground text-pretty">
+          Every year, we have a line up of new design trends that not only look good, but also stick
+          around and influence other designers to “steal” the trend. Love it or hate it, there are
+          actually some design waves that are smart and functional. These functions could range from
+          including more information in less space, to build more engagement with the users. Every
+          year, we have a line up of new design trends that not only look good, but also stick
+          around and influence other designers to “steal” the trend. Love it or hate it, there are
+          actually some design waves that are smart and functional.
+          <br />
+          <br />
+          These functions could range from including more information in less space, to build more
+          engagement with the users. Every year, we have a line up of new design trends that not
+          only look good, but also stick around and influence other designers to “steal” the trend.
+          Love it or hate it, there are actually some design waves that are smart and functional.
+          These functions could range from including more information in less space, to build more
+          engagement with the users.
+        </p>
+      </div>
+    );
+  }
 };

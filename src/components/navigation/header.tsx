@@ -25,9 +25,9 @@ export function Header() {
         <div className='hidden sm:flex gap-6 items-center ml-auto lg:ml-0'>
           <ThemeSwitch />
           <Link
-            href={'/newsletter'}
+            href={'/login'}
             className='whitespace-nowrap text-background select-none h-10 text-base hover:text-background/80 ease-in-out duration-200 border px-5 py-2 bg-primary hover:bg-primary/90 rounded-md'>
-            Join Waitlist
+            Login
           </Link>
         </div>
         <div className='flex lg:hidden'>

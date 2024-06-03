@@ -1,8 +1,8 @@
-import { CourseDetail } from "@/components/common/courses/course-detail";
+import { CourseSingle } from "@/components/common/courses/course-single";
 import React from "react";
 
 const Page = () => {
-  return <CourseDetail/>;
+  return <CourseSingle />;
 };
 
 export default Page;
