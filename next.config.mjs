@@ -6,6 +6,9 @@ const nextConfig = {
         hostname: "images.pexels.com",
       },
       {
+        hostname: "videos.pexels.com",
+      },
+      {
         hostname: "placehold.it",
       },
       {

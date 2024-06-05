@@ -8,6 +8,7 @@ import {
 } from "@/components/ui";
 import React from "react";
 import { EnrollEmpty } from "./sections/enroll-empty";
+import { EnrolledList } from "./sections/enrolled-list";
 
 export const Enrolled = () => {
   return (
@@ -27,7 +28,8 @@ export const Enrolled = () => {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <EnrollEmpty />
+      {/* <EnrollEmpty /> */}
+      <EnrolledList />
     </div>
   );
 };
