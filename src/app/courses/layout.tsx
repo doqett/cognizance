@@ -8,8 +8,8 @@ const Layout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div className="min-h-screen w-full py-20 lg:py-24 relative">
-      <div className="container h-full">{children}</div>
+    <div className="min-h-screen flex flex-col w-full py-20 lg:py-24 relative">
+      <div className="container h-full flex flex-col grow">{children}</div>
     </div>
   );
 };

@@ -17,7 +17,7 @@ import {
   ClockIcon,
   GlobeIcon,
   Share2Icon,
-  StarIcon,
+  StarFilledIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
 import React from "react";
@@ -29,7 +29,7 @@ import { IoMedalOutline } from "react-icons/io5";
 
 export const CourseSingle = () => {
   return (
-    <div className="py-4 space-y-6">
+    <div className="py-4 h-full space-y-6">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -46,7 +46,7 @@ export const CourseSingle = () => {
         </BreadcrumbList>
       </Breadcrumb>
       <div className="flex flex-wrap lg:flex-nowrap">
-        <div className="basis-3/5 space-y-6 pr-8">
+        <div className="basis-full lg:basis-3/5 space-y-6 lg:pr-8">
           <div className="space-y-6 w-full pb-6">
             <h2 className="text-3xl sm:text-5xl font-semibold">
               UX/UI Design Trends Going Into 2024
@@ -81,23 +81,23 @@ export const CourseSingle = () => {
             </div>
           </div>
         </div>
-        <div className="basis-full lg:basis-2/5 flex-row gap-6 lg:gap-0 flex-wrap space-y-2 flex justify-between lg:flex-col lg:justify-end pl-8">
-          <div className="space-y-2">
+        <div className="basis-full lg:basis-2/5 flex-row gap-6 lg:gap-0 flex-wrap space-y-2 flex justify-between lg:flex-col lg:justify-end lg:pl-8">
+          <div className="space-y-2 grow lg:grow-0">
             <div className="flex items-center gap-2">
-              <StarIcon />
+              <StarFilledIcon className="text-amber-400 size-4" />
               <p className="text-lg font-medium">4.5</p>
               <p className="text-muted-foreground">(43 Reviews)</p>
             </div>
             <div className="flex items-center gap-2">
               <CalendarIcon />
-              <p className="text-lg font-medium">July 3rd, 2024</p>
+              <p className="text-lg font-medium">Updated: July 3rd, 2024</p>
             </div>
             <div className="flex items-center gap-2">
               <IoMedalOutline />
               <p className="text-lg font-medium">Certificate on Completion</p>
             </div>
           </div>
-          <div className="space-y-1 lg:pt-8">
+          <div className="space-y-1 lg:pt-8 grow lg:grow-0">
             <h3 className="font-medium">Course Begins</h3>
             <div className="space-y-1">
               <p className="leading-[1.2] text-xl whitespace-nowrap group-hover:text-emerald-500 font-medium duration-200">
@@ -118,17 +118,17 @@ export const CourseSingle = () => {
             <p className="text-xs text-muted-foreground "> * Financial Aid Available</p>
           </div>
 
-          <Link href={"#"} className="flex gap-2 items-center lg:py-4">
+          <Link href={"#"} className="flex gap-2 items-center lg:py-4 w-full">
             <Share2Icon className="size-5" /> Share this course
           </Link>
         </div>
       </div>
-      <div className="flex">
-        <div className="basis-3/5 space-y-6 w-full pr-8">
+      <div className="flex flex-wrap lg:flex-nowrap gap-8 lg:gap-0">
+        <div className="basis-full lg:basis-3/5 space-y-6 w-full lg:pr-8">
           <About />
           <CourseContents />
         </div>
-        <div className="basis-2/5 space-y-6 pl-8">
+        <div className="basis-full lg:basis-2/5 space-y-6 sticky top-24 lg:pl-8">
           <h2 className="text-3xl font-semibold tracking-tight text-primary">Similar Courses</h2>
           <div className="space-y-2">
             {courses.slice(0, 5).map((course, index) => (

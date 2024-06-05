@@ -16,7 +16,7 @@ export const PreviewCourse = ({ small = false, ...props }: ICoursePreview) => {
             <div
               className={cn(
                 " w-full aspect-square bg-accent relative rounded-t-lg overflow-hidden",
-                small ? "h-36" : "h-56"
+                small ? "h-36" : "h-40 md:h-56"
               )}
             >
               <Image
@@ -29,7 +29,12 @@ export const PreviewCourse = ({ small = false, ...props }: ICoursePreview) => {
               />
             </div>
           </div>
-          <div className={cn("flex flex-col grow relative", small ? "p-2.5 px-4" : "p-4 gap-2")}>
+          <div
+            className={cn(
+              "flex flex-col grow relative",
+              small ? "p-2.5 px-4" : "p-2.5 px-4 md:p-4 md:gap-2"
+            )}
+          >
             <div className="flex items-center gap-2 text-muted-foreground w-full ">
               <Avatar className="h-8 w-8 rounded border-2 border-background ring-1 ring-border">
                 <AvatarImage
@@ -40,10 +45,15 @@ export const PreviewCourse = ({ small = false, ...props }: ICoursePreview) => {
               </Avatar>
               <p className="text-sm leading-tight line-clamp-2">{props.author}</p>
             </div>
-            <h2 className={cn("text-lg pt-2 leading-tight line-clamp-2", small && "leading-none")}>
+            <h2
+              className={cn(
+                "text-lg pt-2 leading-none line-clamp-2",
+                small && "leading-none md:leading-tight"
+              )}
+            >
               {props.title}
             </h2>
-            <p className={cn("text-sm mt-auto", small && "mt-1.5")}>
+            <p className={cn("text-sm mt-1.5 md:mt-auto", small && "mt-1.5")}>
               Course Length: {props.duration}
             </p>
             <div className="flex gap-2 items-center">
